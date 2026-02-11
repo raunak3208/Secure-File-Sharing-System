@@ -63,5 +63,22 @@ exports.logout = async (req, res) => {
   }
 };
 
+exports.getCurrentUser = async (req, res) => {
+  try {
+    const token = req.headers.authorization?.split(' ')[1];
 
+    if (!token) {
+      return res.status(401).json({ error: 'No token provided' });
+    }
+
+    const { data: { user }, error } = await supabase.auth.getUser(token);
+
+    if (error) {
+      return res.status(401).json({ error: error.message });
+    }
+
+    res.json({ user });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
