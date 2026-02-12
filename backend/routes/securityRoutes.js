@@ -9,6 +9,9 @@ router.post('/violations', securityController.logViolation);
 // Get violations for a file
 router.get('/violations/:fileId', verifyAuth, securityController.getViolations);
 
+// Record access attempt
+router.post('/access-attempts', securityController.recordAccessAttempt);
+
 
 
 module.exports = router;
