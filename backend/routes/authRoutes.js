@@ -9,4 +9,5 @@ router.post('/register', authController.register);
 router.post('/logout', authController.logout);
 router.get('/me', authenticateToken, authController.getCurrentUser);
 
+
 module.exports = router;
