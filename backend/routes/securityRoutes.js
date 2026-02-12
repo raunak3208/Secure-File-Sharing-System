@@ -6,6 +6,9 @@ const { verifyAuth } = require('../middleware/authMiddleware');
 // Log security violation
 router.post('/violations', securityController.logViolation);
 
+// Get violations for a file
+router.get('/violations/:fileId', verifyAuth, securityController.getViolations);
+
 
 
 module.exports = router;
