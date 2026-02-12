@@ -12,6 +12,7 @@ router.get('/violations/:fileId', verifyAuth, securityController.getViolations);
 // Record access attempt
 router.post('/access-attempts', securityController.recordAccessAttempt);
 
-
+// Increment view count
+router.post('/view-count/:fileAccessId', securityController.incrementViewCount);
 
 module.exports = router;
