@@ -73,17 +73,7 @@ exports.deleteFile = async (req, res) => {
       return res.status(400).json({ error: storageError.message });
     }
 
-    // Delete from database
-    const { error: dbError } = await supabase
-      .from('files')
-      .delete()
-      .eq('id', fileId);
-
-    if (dbError) {
-      return res.status(400).json({ error: dbError.message });
-    }
-
-    res.json({ message: 'File deleted successfully' });
+    
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
