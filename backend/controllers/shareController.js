@@ -107,3 +107,34 @@ exports.getShareByToken = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.deleteShare = async (req, res) => {
+  try {
+    const { shareId } = req.params;
+    const userId = req.user.id;
+
+    // Verify ownership
+    const { data: share } = await supabase
+      .from('file_shares')
+      .select('files(user_id)')
+      .eq('id', shareId)
+      .single();
+
+    if (share.files.user_id !== userId) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    const { error } = await supabase
+      .from('file_shares')
+      .delete()
+      .eq('id', shareId);
+
+    if (error) {
+      return res.status(400).json({ error: error.message });
+    }
+
+    res.json({ message: 'Share deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
