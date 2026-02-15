@@ -131,7 +131,22 @@ export default function HomePage() {
         </div>
       </section>
 
-     
+      {/* CTA */}
+      <section className="max-w-4xl mx-auto px-4 py-20 text-center">
+        <h3 className="text-3xl font-bold text-foreground mb-4">Ready to secure your files?</h3>
+        <p className="text-muted-foreground mb-6">
+          Create your account and start sharing files with confidence.
+        </p>
+        <Button
+          onClick={() => router.push('/auth/sign-up')}
+          size="lg"
+          className="bg-primary text-primary-foreground hover:bg-primary/90"
+        >
+          Create Free Account
+        </Button>
+      </section>
+
+      
     </div>
   );
 }
