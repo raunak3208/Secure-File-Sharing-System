@@ -146,7 +146,12 @@ export default function HomePage() {
         </Button>
       </section>
 
-      
+      {/* Footer */}
+      <footer className="border-t border-border bg-card/50">
+        <div className="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
+          <p>SecureShare - Secure File Sharing System. Built with security and privacy first.</p>
+        </div>
+      </footer>
     </div>
   );
 }
