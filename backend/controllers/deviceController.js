@@ -84,7 +84,6 @@ exports.checkDevice = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
-
 // Get device history for a file
 exports.getDeviceHistory = async (req, res) => {
   try {

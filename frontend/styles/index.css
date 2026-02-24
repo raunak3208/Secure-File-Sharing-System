@@ -1,0 +1,55 @@
+/* Import global styles */
+@import './globals.css';
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* React Transition Group */
+.fade-enter {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.fade-exit {
+  animation: fadeIn 0.3s ease-out reverse;
+}
+
+.slide-enter {
+  animation: slideIn 0.3s ease-in;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
