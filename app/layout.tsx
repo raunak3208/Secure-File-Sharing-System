@@ -11,7 +11,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Secure File Sharing System',
   description: 'Share files securely with time-limited access and role-based permissions',
-  generator: 'v0.app',
+  generator: 'secure-file-sharing-system',
   icons: {
     icon: [
       {
