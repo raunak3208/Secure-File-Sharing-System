@@ -69,11 +69,7 @@ export function ShareModal({
       
       // Handle expiration - null for "all-time"
       let expiresAt: string | null = null;
-      if (expirationDays !== 'all-time') {
-        const date = new Date();
-        date.setDate(date.getDate() + parseInt(expirationDays));
-        expiresAt = date.toISOString();
-      }
+      
 
       // Get current user to populate email field
       const { data: { user } } = await supabase.auth.getUser();
